@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% block content %}
+	<header>
+        <h1>{{ pagename|title }}</h1>
+		<p>home content</p>
+    </header>
+
+    <section>
+		<ul>
+		{% for author in authors %}
+			<li{% if loop.index <= 0 %} class="first"{% endif %}>{{ author }}</li>
+		{% else %}
+			<li>There are no authors.</li>
+		{% endfor %}
+		</ul>
+		<a href="javascript:void(0)" onclick="render()">click to render using ajax</a>
+    </section>
+{% endblock %}
